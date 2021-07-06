@@ -32,20 +32,20 @@ $db = $config->getConnection();
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-                    </div>
+                    
                 </div>
             </form>
+
+            <div class="badge bg-primary text-wrap" style="width: 6rem;">
+            <?php echo $_SESSION['nama_lengkap'] ?>
+            </div>
             <!-- Navbar-->
             <ul class="navbar-nav ml-auto ml-md-0">
                 <li class="nav-item dropdown">
+                
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">Settings</a>
-                        <a class="dropdown-item" href="#">Activity Log</a>
-                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="user.php">Data Akun</a>
                         <a class="dropdown-item" href="../logout.php">Logout</a>
                     </div>
                 </li>
@@ -69,7 +69,7 @@ $db = $config->getConnection();
                                 <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
                                 Kriteria
                             </a>
-                            <a class="nav-link" href="tables.html">
+                            <a class="nav-link" href="../admin/alternatif.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
                                 Alternatif
                             </a>
@@ -80,15 +80,19 @@ $db = $config->getConnection();
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Data Rangking</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Perangkingan</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Tambah Data</a>
+                                    <a class="nav-link" href="../admin/rangking.php">Data Rangking</a>
+                                    <a class="nav-link" href="normalisasi.php">Perangkingan</a>
+                                    <a class="nav-link" href="rangking-baru.php">Tambah Data</a>
                                 </nav>
                             </div>
                             
-                            <a class="nav-link" href="tables.html">
+                            <!-- <a class="nav-link" href="laporan.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
                                 Laporan
+                            </a> -->
+                            <a class="nav-link" href="laporan-cetak.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
+                                Laporan Cetak
                             </a>
                         </div>
                     </div>
