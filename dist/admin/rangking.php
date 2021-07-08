@@ -10,6 +10,8 @@ include_once '../controller/rangking.inc.php';
 $pro = new Rangking($db);
 $stmt = $pro->readKhusus();
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,16 +64,17 @@ $stmt = $pro->readKhusus();
 		                <td><?php echo $row['nama_alternatif'] ?></td>
 		                <td><?php echo $row['nama_kriteria'] ?></td>
 		                <td><?php echo $row['nilai_rangking'] ?></td>
-                <td class="text-center">
-					<a href="rangking-ubah.php?id=<?php echo $row['id_alternatif'] ?>" class="btn btn-info"><i class="fas fa-edit" aria-hidden="true"></i></a>
-                </td>
-					<td class="text-center">
-                    <a href="rangking-hapus.php?id=<?php echo $row['id_alternatif'] ?>" onclick="return confirm('Yakin ingin menghapus data?')" class="btn btn-danger"><i class="fas fa-trash" aria-hidden="true"></i></a>
-			    </td>
-            </tr>
-<?php
-}
-?>
+		                <td class="text-center">
+							<a href="rangking-ubah.php?ia=<?php echo $row['id_alternatif'] ?>&ik=<?php echo $row['id_kriteria'] ?>" class="btn btn-warning"><i class="fas fa-edit" aria-hidden="true"></i></a>
+                            </td>
+                            <td class="text-center">
+							<a href="rangking-hapus.php?ia=<?php echo $row['id_alternatif'] ?>&ik=<?php echo $row['id_kriteria'] ?>" onclick="return confirm('Yakin ingin menghapus data')" class="btn btn-danger"><i class="fas fa-trash" aria-hidden="true"></i></a>
+                            </td>
+					    </td>
+		            </tr>
+		<?php
+		}
+		?>
         </tbody>
 
     </table>
@@ -96,57 +99,6 @@ include_once '../include/footer.php';
 	<script src="../js/jquery-1.11.3.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 
-	   <script>
-            var ctx = document.getElementById("myChart");
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: [<?php while ($a = mysqli_fetch_array($alternatif)) { echo '"' . $a['nama_alternatif'] . '",';}?>],
-                    datasets: [{
-                            label: 'Grafik Perangkingan',
-                            data: [<?php while ($n = mysqli_fetch_array($nilai)) { echo '"' . $n['hasil_alternatif'] . '",';}?>],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)',
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255,99,132,1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)',
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderWidth: 1
-                        }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }]
-                    }
-                }
-            });
-        </script>
     </body>
 
 

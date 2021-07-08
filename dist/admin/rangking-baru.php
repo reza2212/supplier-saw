@@ -1,10 +1,10 @@
 <?php
 include_once '../include/head.php';
 include_once '../controller/alternatif.inc.php';
-include_once '../controller/kriteria.inc.php';
-include_once '../controller/nilai.inc.php';
 $pgn1 = new Alternatif($db);
+include_once '../controller/kriteria.inc.php';
 $pgn2 = new Kriteria($db);
+include_once '../controller/nilai.inc.php';
 $pgn3 = new Nilai($db);
 if($_POST){
 	
@@ -16,37 +16,34 @@ if($_POST){
 	$eks->nn = $_POST['nn'];
 	
 	if($eks->insert()){
-?>
+    echo "<script>location.href='rangking.php'</script>";
 
-<div class="alert alert-success alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Berhasil Tambah Data!</strong> Tambah lagi atau <a href="rangking.php">lihat semua data</a>.
-</div>
-<?php
-	}
-	
-	else{
+	}else{
 ?>
-<div class="container mt-5">
 <div class="alert alert-danger alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   <strong>Gagal Tambah Data!</strong> Terjadi kesalahan, coba sekali lagi.
 </div>
-
 <?php
 	}
 }
 ?>
-<div class="container mt-5">
-		<div class="row">
-		  <div class="col-xs-12 col-sm-6 col-md-6">
-		  <div class="well">
-		  	<div class="page-header">
-			  <h3>Tambah Rangking</h3>
-			</div>
-			    <form method="post">
+
+    <body class="sb-nav-fixed">
+          <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                        <h1 class="mt-4">Dashboard</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">Tambah Perangkingan</li>
+                        </ol>
+
+<!--test-->
+<div class="container">
+
+<form method="post">
 				  <div class="form-group">
-				    <label for="ia">Alternatif</label>
+          <label for="ia">Alternatif</label>
 				    <select class="form-control" id="ia" name="ia">
 				    	<?php
 						$stmt3 = $pgn1->readAll();
@@ -57,7 +54,7 @@ if($_POST){
 					    ?>
 				    </select>
 				  </div>
-				  <div class="form-group">
+          <div class="form-group">
 				    <label for="ik">Kriteria</label>
 				    <select class="form-control" id="ik" name="ik">
 				    	<?php
@@ -80,21 +77,17 @@ if($_POST){
 						}
 					    ?>
 				    </select>
-				  </div>
+            </div>
 				  <button type="submit" class="btn btn-primary">Simpan</button>
 				  <button type="button" onclick="location.href='rangking.php'" class="btn btn-success">Kembali</button>
 				</form>
-				</div>	  
-		  </div>
-		  
-		  <div class="col-xs-12 col-sm-3 col-md-3">
-		  	<?php include_once '../include/head.php'; ?>
-		</div>
-		<div class="row">
-		<?php
+  </div>
+                </main>
+                <?php
 include_once '../include/footer.php';
 ?>
-</div>
+            </div>
+        </div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="../js/scripts.js"></script>
@@ -105,3 +98,10 @@ include_once '../include/footer.php';
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
         <script src="../assets/demo/datatables-demo.js"></script>
 		<script src="../js/highcharts.js"></script>
+
+
+
+    </body>
+
+
+</html>

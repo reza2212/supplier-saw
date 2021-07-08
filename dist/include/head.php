@@ -82,7 +82,6 @@ $db = $config->getConnection();
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="../admin/rangking.php">Data Rangking</a>
                                     <a class="nav-link" href="normalisasi.php">Perangkingan</a>
-                                    <a class="nav-link" href="rangking-baru.php">Tambah Data</a>
                                 </nav>
                             </div>
                             
@@ -90,9 +89,10 @@ $db = $config->getConnection();
                                 <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
                                 Laporan
                             </a> -->
-                            <a class="nav-link" href="laporan-cetak.php">
+                            
+                            <a class="nav-link" href="laporan.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book"></i></div>
-                                Laporan Cetak
+                                Laporan
                             </a>
                         </div>
                     </div>
