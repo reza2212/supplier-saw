@@ -26,9 +26,9 @@ $stmty = $pro->readKhusus();
           <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Dashboard</h1>
+                        <h1 class="mt-4">Laporan hasil supplier terbaik dengan metode <i>Simple Additive Weighted</i></h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Data Kriteria</li>
+                            <li class="breadcrumb-item active">Laporan Hasil SAW</li>
                         </ol>
                         
 <!--test-->

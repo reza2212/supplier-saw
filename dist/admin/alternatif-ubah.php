@@ -28,9 +28,9 @@ if($_POST){
           <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Dashboard</h1>
+                        <h1 class="mt-4">Data Alternatif</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Ubah Kriteria</li>
+                            <li class="breadcrumb-item active">Ubah Data Alternatif</li>
                         </ol>
 
 <!--test-->
@@ -42,7 +42,7 @@ if($_POST){
 				    <input type="text" class="form-control" id="kt" name="kt" value="<?php echo $eks->kt; ?>">
 				  </div>
 				  <button type="submit" class="btn btn-primary">Ubah</button>
-				  <button type="button" onclick="location.href='kriteria.php'" class="btn btn-success">Kembali</button>
+				  <button type="button" onclick="location.href='alternatif.php'" class="btn btn-success">Kembali</button>
 				</form>
   </div>
                 </main>

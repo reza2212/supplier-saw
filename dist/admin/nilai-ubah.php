@@ -30,9 +30,9 @@ if($_POST){
           <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Dashboard</h1>
+                        <h1 class="mt-4">Data Nilai</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Ubah Kriteria</li>
+                            <li class="breadcrumb-item active">Ubah Data Nilai</li>
                         </ol>
                         
 <!--test-->
