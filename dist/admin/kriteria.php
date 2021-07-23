@@ -36,15 +36,6 @@ $stmt = $pro->readAll();
             </tr>
         </thead>
 
-        <tfoot>
-            <tr>
-                <th>No</th>
-                <th>Nama Kriteria</th>
-                <th>Tipe Kriteria</th>
-                <th>Bobot Kriteria</th>
-                <th colspan="2">Aksi</th>
-            </tr>
-        </tfoot>
 
         <tbody>
 <?php

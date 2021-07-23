@@ -9,6 +9,7 @@ $stmt2 = $pro2->readAll();
 include_once '../controller/rangking.inc.php';
 $pro = new Rangking($db);
 $stmt = $pro->readKhusus();
+$stmt = $pro1->readAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +36,9 @@ $stmt = $pro->readKhusus();
 		                <th colspan="<?php echo $stmt2->rowCount(); ?>" class="text-center">Kriteria</th>
 		                <th rowspan="2" style="vertical-align: middle" class="text-center">Hasil</th>
 		            </tr>
+                    
+            
+        
 		            <tr>
 		            <?php
 					while ($row2 = $stmt2->fetch(PDO::FETCH_ASSOC)){
@@ -44,7 +48,10 @@ $stmt = $pro->readKhusus();
 					}
 					?>
 		            </tr>
+
+                   
 		        </thead>
+
 
 		        <tbody>
 		<?php
@@ -98,6 +105,38 @@ $stmt = $pro->readKhusus();
 		        </tbody>
 
     </table>
+    </table>
+<h4>Rangking</h4>
+    <table class="table table-striped table-bordered" style="width:30%" id="tabeldata">
+    <thead>
+                    <tr>
+                        <th>Rangking</th>
+                        <th>Nama Alternatif</th>
+                    </tr>
+                    <tr>
+                   
+                    </tr>
+                    <?php
+$i=0;
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    $i++;
+?>
+            <tr>
+                <?php if ($i == 1) {
+                        echo "<td><div class=\"ui ribbon label\">Pertama</div></td>";
+                    } else {
+                        echo "<td>".$i."</td>";
+                    }
+
+                    ?>
+                
+                <td><?php echo $row['nama_alternatif'] ?></td>
+                
+            </tr><?php
+}
+?>
+</table>
+                </thead>
   </div>
                 </main>
                 <?php

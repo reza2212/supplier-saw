@@ -28,8 +28,8 @@ class Alternatif{
 	
 	function readAll(){
 
-		$query = "SELECT * FROM ".$this->table_name." ORDER BY id_alternatif ASC";
-		$stmt = $this->conn->prepare( $query );
+		$query = "SELECT * FROM ".$this->table_name." ORDER BY hasil_alternatif DESC";
+		$stmt = $this->conn->prepare($query);
 		$stmt->execute();
 		
 		return $stmt;

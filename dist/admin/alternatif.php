@@ -30,19 +30,11 @@ $stmt = $pro->readAll();
             <tr>
                 <th width="30px">No</th>
                 <th>Nama Alternatif</th>
-                <th>Hasil Alternatif</th>
                 <th colspan="2">Aksi</th>
             </tr>
         </thead>
 
-        <tfoot>
-            <tr>
-                <th>No</th>
-                <th>Nama Alternatif</th>
-                <th>Hasil Alternatif</th>
-                <th colspan="2">Aksi</th>
-            </tr>
-        </tfoot>
+
 
         <tbody>
 <?php
@@ -52,7 +44,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             <tr>
                 <td><?php echo $no++ ?></td>
                 <td><?php echo $row['nama_alternatif'] ?></td>
-                <td><?php echo $row['hasil_alternatif'] ?></td>
+                
                 <td class="text-center">
 					<a href="alternatif-ubah.php?id=<?php echo $row['id_alternatif'] ?>" class="btn btn-info"><i class="fas fa-edit" aria-hidden="true"></i></a>
                 </td>

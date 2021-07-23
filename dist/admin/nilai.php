@@ -35,14 +35,6 @@ $stmt = $pro->readAll();
             </tr>
         </thead>
 
-        <tfoot>
-            <tr>
-            <th width="30px">No</th>
-                <th>Keterangan Nilai</th>
-                <th>Jumlah Nilai</th>
-                <th colspan="2">Aksi</th>
-            </tr>
-        </tfoot>
 
         <tbody>
         <?php

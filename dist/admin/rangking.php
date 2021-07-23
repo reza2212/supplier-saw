@@ -44,15 +44,7 @@ $stmt = $pro->readKhusus();
             </tr>
         </thead>
 
-        <tfoot>
-            <tr>
-            <th width="30px">No</th>
-		                <th>Alternatif</th>
-		                <th>Kriteria</th>
-		                <th>Nilai</th>
-                <th colspan="2">Aksi</th>
-            </tr>
-        </tfoot>
+      
 
         <tbody>
         <?php
