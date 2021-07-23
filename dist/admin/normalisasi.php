@@ -9,7 +9,10 @@ $stmt2 = $pro2->readAll();
 include_once '../controller/rangking.inc.php';
 $pro = new Rangking($db);
 $stmt = $pro->readKhusus();
-$stmt = $pro1->readAll();
+include_once '../controller/perangkingan.inc.php';
+$pro3 = new perangkingan($db);
+$stmt3 = $pro3->readAll();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -118,7 +121,7 @@ $stmt = $pro1->readAll();
                     </tr>
                     <?php
 $i=0;
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+while ($row = $stmt3->fetch(PDO::FETCH_ASSOC)){
     $i++;
 ?>
             <tr>
